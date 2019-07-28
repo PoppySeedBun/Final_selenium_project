@@ -24,7 +24,7 @@ class ProductPage(BasePage):
                self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text, \
                "Product names in alert and description don't match"
 
-    def should_be_no_success_message_two(self):
+    def should_be_no_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.PRODUCT_NAME_ALERT), "Alert shouldn't be visible"
 
 

@@ -1,3 +1,4 @@
+from .locators import BasePageLocators
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
@@ -49,6 +50,15 @@ class BasePage(object):
         except TimeoutException:
             return True
         return False
+
+    def go_to_login_page(self):
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        link.click()
+        assert self.browser.current_url == self.browser.find_element(*BasePageLocators.LOGIN_LINK).get_attribute("href"), \
+        "Link doesn't redirect to the login page"
+       
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
                
 
