@@ -25,3 +25,6 @@ class ProductPage(BasePage):
 
     def should_be_no_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.PRODUCT_NAME_ALERT), "Alert shouldn't be visible"
+
+    def alert_should_dissapear(self):
+        assert self.is_disappeared(*ProductPageLocators.PRODUCT_NAME_ALERT), "Alert should dissapear"
