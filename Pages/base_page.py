@@ -1,4 +1,5 @@
 from .locators import BasePageLocators
+from .locators import MainPageLocators
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
@@ -56,6 +57,12 @@ class BasePage(object):
         link.click()
         assert self.browser.current_url == self.browser.find_element(*BasePageLocators.LOGIN_LINK).get_attribute("href"), \
         "Link doesn't redirect to the login page"
+
+    def go_to_basket(self):
+        link = self.browser.find_element(*MainPageLocators.BASKET_BUTTON)
+        url_to_be_redirected = self.browser.find_element(*MainPageLocators.BASKET_BUTTON).get_attribute("href")
+        link.click()
+        assert  self.browser.current_url == url_to_be_redirected, "Link doesn't redirect to the basket page"
        
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
