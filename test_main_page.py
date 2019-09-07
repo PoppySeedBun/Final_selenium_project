@@ -1,7 +1,7 @@
-from pages.main_page import MainPage
-from pages.login_page import LoginPage
-from pages.basket_page import BasketPage
-from pages.locators import MainPageLocators
+from Pages.main_page import MainPage
+from Pages.login_page import LoginPage
+from Pages.basket_page import BasketPage
+from Pages.locators import MainPageLocators
 import pytest
 
 

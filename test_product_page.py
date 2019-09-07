@@ -1,9 +1,9 @@
 import pytest
-from pages.product_page import ProductPage
-from pages.login_page import LoginPage
-from pages.basket_page import BasketPage
-from pages.locators import ProductPageLocators
-from pages.locators import LoginPageLocators
+from Pages.product_page import ProductPage
+from Pages.login_page import LoginPage
+from Pages.basket_page import BasketPage
+from Pages.locators import ProductPageLocators
+from Pages.locators import LoginPageLocators
 import time
 
 
