@@ -1,5 +1,5 @@
-from .locators import BasePageLocators
-from .locators import MainPageLocators
+from locators import BasePageLocators
+from locators import MainPageLocators
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
